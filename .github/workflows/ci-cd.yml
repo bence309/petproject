@@ -1,0 +1,32 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11.5
+
+      - name: Install Flask
+        run: |
+          pip install Flask
+          # You can add any other Python dependencies here if needed
+
+      - name: Run tests
+        run: |
+          # You can run tests here if you have a testing framework
+          # For example, if you're using unittest:
+          python -m unittest discover
+
+      # Add more steps for deployment if needed
