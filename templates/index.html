@@ -6,6 +6,28 @@
     <title>Bence Bodi To-Do App</title>
 </head>
 <body>
-    <h1>Testing!</h1>
+    <h1>To Do List</h1>
+    <form action="/add" method="post">
+        <div>
+            <label>Enter the task </label>
+            <input type="text" name="name">
+            <button type="submit">Add task</button>
+        </div>
+    </form><br></br>
+
+    <table>
+        <tbody>
+            {%for todo in todo_list%}
+            <tr>
+                <td>{{todo.task.id}}</td>
+                <td>{{todo.name}}</td>
+                {%if todo.done=False%}
+                <td>Not done</td>
+                {%if todo.done=True%}
+                <td>Done</td>
+            </tr>
+        </tbody>
+    </table>
+
 </body>
 </html>
