@@ -11,7 +11,7 @@ class Todo(db.Model) :
     name=db.Column(db.String(100))
     done=db.Column(db.Boolean)
 
-
+#test
 
 @app.route("/")
 def index():
