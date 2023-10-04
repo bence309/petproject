@@ -11,15 +11,13 @@ class Todo(db.Model) :
     name=db.Column(db.String(100))
     done=db.Column(db.Boolean)
 
-#test
-
-@app.route("/")
+@app.route('/')
 def index():
     todo_list=Todo.query.all()
-    return render_template("index.html", todo_list=todo_list)
+    return render_template('index.html', todo_list=todo_list)
 
 
-app.route('/add', methods=['POST'])
+@app.route('/add', methods=['POST'])
 def add():
     name=request.form.get("name")
     new_task=Todo(name=name, done=False)
@@ -28,14 +26,14 @@ def add():
     return redirect(url_for("index"))
 
 
-app.route('/update/<int:todo_id>')
+@app.route('/update/<int:todo_id>')
 def update(todo_id):
     todo=Todo.query.get(todo_id)
     todo.done=not todo.done
     db.session.commit()
     return redirect(url_for("index"))
 
-app.route('/delete/<int:todo_id>')
+@app.route('/delete/<int:todo_id>')
 def delete(todo_id):
     todo=Todo.query.get(todo_id)
     db.session.delete(todo)

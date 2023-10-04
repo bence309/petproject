@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bence Bodi To-Do App</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
     <h1>To Do List</h1>
@@ -17,17 +18,20 @@
 
     <table>
         <tbody>
-            {%for todo in todo_list%}
+            {% for todo in todo_list %}
             <tr>
-                <td>{{todo.task.id}}</td>
+                <td>{{todo.task_id}}</td>
                 <td>{{todo.name}}</td>
-                {%if todo.done=False%}
+                {% if todo.done==False %}
                 <td>Not done</td>
-                {%if todo.done=True%}
+                {% else %}
                 <td>Done</td>
+                {% endif %}
+                <td><a href="/update/{{todo.task_id}}">Update</a></td>
+                <td><a href="/delete/{{todo.task_id}}">Delete</a></td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
-
 </body>
 </html>
