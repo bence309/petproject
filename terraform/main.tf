@@ -13,12 +13,13 @@ resource "aws_db_instance" "example" {
   storage_type         = "gp2"
   engine               = "postgres"
   engine_version       = "15.3"
-  instance_class       = "db.r5d.large"
+  instance_class       = "db.t3.micro"
   identifier           = "mydb"
   username             = var.username
   password             = var.password
   db_subnet_group_name = aws_db_subnet_group.example.name
   parameter_group_name = "default.postgres15"
+  multi_az            = false
 
   skip_final_snapshot = true
 
