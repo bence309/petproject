@@ -1,3 +1,4 @@
 .env
 /terraform/variables.tf
 /terraform/terraform.exe
+/terraform/.terraform/
