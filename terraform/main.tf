@@ -3,9 +3,9 @@ provider "aws" {
 }
 
 resource "aws_db_subnet_group" "example" {
-  name       = "petproject-subnet-group"
+  name        = "petproject-subnet-group"
   description = "petproject-bence"
-  subnet_ids = var.subnet_ids
+  subnet_ids  = var.subnet_ids
 }
 
 resource "aws_db_instance" "example" {
@@ -19,11 +19,13 @@ resource "aws_db_instance" "example" {
   password             = var.password
   db_subnet_group_name = aws_db_subnet_group.example.name
   parameter_group_name = "default.postgres15"
-  multi_az            = false
-
-  skip_final_snapshot = true
+  multi_az             = false
+  publicly_accessible  = true
+  skip_final_snapshot  = true
 
   tags = {
     Name = "mydb"
   }
 }
+
+

@@ -8,7 +8,7 @@ load_dotenv()
 app = Flask(__name__, template_folder="templates")
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db= SQLAlchemy(app)
+db = SQLAlchemy(app)
 
 class Todo(db.Model):
     task_id = db.Column(db.Integer, primary_key=True)
