@@ -23,7 +23,7 @@ with app.app_context():
 
 @app.route('/')
 def index():
-    todo_list = Todo.query.all()
+    todo_list = Todo.query.order_by(Todo.task_id).all()
     return render_template('index.html', todo_list=todo_list)
 
 

@@ -1,68 +1,71 @@
 /* Reset some default styles for better consistency */
 body, h1, form, table {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Apply some styling to the entire page */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    margin: 20px;
-    padding: 20px;
-  }
-  
-  /* Style the page title */
-  h1 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  /* Style the form for adding tasks */
-  form {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Style the table for displaying tasks */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-  }
-  
-  /* Style table headers */
-  th {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-  }
-  
-  /* Style table rows */
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  /* Style table cells */
-  td {
-    padding: 10px;
-  }
-  
-  /* Style update and delete links */
-  a {
-    text-decoration: none;
-    color: #007bff;
-    margin-right: 10px;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply dark theme styles to the entire page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #333; /* Dark background color */
+  color: #fff; /* Light text color */
+  margin: 20px;
+  padding: 20px;
+}
+
+/* Style the page title */
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #007bff; /* Accent color for the title */
+}
+
+/* Style the form for adding tasks */
+form {
+  background-color: #444; /* Dark background color for the form */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the table for displaying tasks */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #444; /* Dark background color for the table */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  color: #fff; /* Light text color */
+}
+
+/* Style table headers */
+th {
+  background-color: #007bff; /* Accent color for table headers */
+  color: #fff;
+  padding: 10px;
+}
+
+/* Style table rows */
+tr:nth-child(even) {
+  background-color: #333; /* Slightly darker background color for even rows */
+}
+
+/* Style table cells */
+td {
+  padding: 10px;
+  width:200px;
+}
+
+/* Style update and delete links */
+a {
+  text-decoration: none;
+  color: #007bff;
+  margin-right: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+

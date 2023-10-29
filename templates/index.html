@@ -19,7 +19,7 @@
     <table>
         <tbody>
             {% for todo in todo_list %}
-            <tr>
+            <tr class="todo-row">
                 <td>{{todo.task_id}}</td>
                 <td>{{todo.name}}</td>
                 {% if todo.done==False %}
