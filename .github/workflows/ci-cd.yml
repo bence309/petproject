@@ -18,15 +18,18 @@ jobs:
         with:
           python-version: 3.11.5
 
-      - name: Install Flask
-        run: |
-          pip install Flask
-          # You can add any other Python dependencies here if needed
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      - name: Run tests
-        run: |
-          # You can run tests here if you have a testing framework
-          # For example, if you're using unittest:
-          python -m unittest discover
+      - name: PEP 8 Check
+        run: flake8 app.py
+        continue-on-error: true
 
-      # Add more steps for deployment if needed
+      - name: Build and push Docker image
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: |
+          echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+          docker build -t bence309/bence309-petproject:latest .
+          docker push bence309/bence309-petproject:latest

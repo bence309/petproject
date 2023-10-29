@@ -2,3 +2,6 @@
 /terraform/variables.tf
 /terraform/terraform.exe
 /terraform/.terraform/
+/terraform/.terraform.lock.hcl
+/terraform/terraform.tfstate
+/terraform/terraform.tfstate.backup
