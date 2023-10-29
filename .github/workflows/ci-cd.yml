@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 16 
+          node-version: 16  
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -27,6 +27,9 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+
+      - name: Install Flake8
+        run: pip install flake8
 
       - name: PEP 8 Check
         run: flake8 app.py
