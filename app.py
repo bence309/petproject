@@ -43,7 +43,7 @@ def update(todo_id):
     db.session.commit()
     return redirect(url_for("index"))
 
-#test
+#ci-cd-test
 
 
 @app.route('/delete/<int:todo_id>')
