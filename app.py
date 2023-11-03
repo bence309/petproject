@@ -43,6 +43,8 @@ def update(todo_id):
     db.session.commit()
     return redirect(url_for("index"))
 
+#test
+
 
 @app.route('/delete/<int:todo_id>')
 def delete(todo_id):
